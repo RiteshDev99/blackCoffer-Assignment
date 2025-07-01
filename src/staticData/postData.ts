@@ -1,0 +1,48 @@
+import {postCardProps} from "@/src/components/ui/postCard";
+
+export const PostData:postCardProps[] = [
+    {
+        id: '1',
+        name:'testing',
+        location:'Noida, Uttar Pradesh',
+        imageUrl:'https://thumbs.dreamstime.com/b/technical-support-center-customer-service-internet-business-technology-concept-technical-support-center-customer-service-internet-119668737.jpg',
+        postDate:'Jul 1, 2025',
+        postContent:'Architecture | ',
+        views:'3 Views ',
+        discription:'vsveee',
+        fullLocation:'Noida Sector 3 , Noida, Meerut Division, UP ',
+    },
+    {
+        id: '2',
+        name:'testing',
+        location:'Noida, Uttar Pradesh',
+        imageUrl:'https://plus.unsplash.com/premium_photo-1675198764473-30434364c8b6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D',
+        postDate:'Jul 1, 2025',
+        postContent:'Architecture | ',
+        views:'3 Views ',
+        discription:'vsveee',
+        fullLocation:'Noida Sector 3 , Noida, Meerut Division, UP ',
+    },
+    {
+        id: '3',
+        name:'testing',
+        location:'Noida, Uttar Pradesh',
+        imageUrl:'https://plus.unsplash.com/premium_photo-1675198764473-30434364c8b6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D',
+        postDate:'Jul 1, 2025',
+        postContent:'Architecture | ',
+        views:'3 Views ',
+        discription:'vsveee',
+        fullLocation:'Noida Sector 3 , Noida, Meerut Division, UP ',
+    },
+    {
+        id: '4',
+        name:'testing',
+        location:'Noida, Uttar Pradesh',
+        imageUrl:'https://plus.unsplash.com/premium_photo-1675198764473-30434364c8b6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D',
+        postDate:'Jul 1, 2025',
+        postContent:'Architecture | ',
+        views:'3 Views ',
+        discription:'vsveee',
+        fullLocation:'Noida Sector 3 , Noida, Meerut Division, UP ',
+    },
+]

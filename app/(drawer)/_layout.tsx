@@ -5,21 +5,24 @@ import {
     DrawerContentComponentProps,
 } from "@react-navigation/drawer";
 import { Ionicons, SimpleLineIcons } from "@expo/vector-icons";
-import { router, usePathname } from "expo-router";
-import { useEffect} from "react";
+import { router } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 
-const CustomDrawerContent = ((props: DrawerContentComponentProps) => {
-    const pathName = usePathname();
-
-    useEffect(() => {
-        console.log("Current Path:", pathName);
-    }, [pathName]);
+const CustomDrawerContent = (props: DrawerContentComponentProps) => {
     
-
     return (
-        <DrawerContentScrollView {...props}>
+        <DrawerContentScrollView
+            {...props}
+            contentContainerStyle={{
+                alignItems: 'center',
+                padding: 0,
+                margin: 0,
+                paddingLeft: 0,
+                marginLeft: 0,
+            }}
+            style={{ padding: 0, margin: 0 }}
+        >
             <View style={styles.userInfo}>
                 <View style={styles.bgWrapper}>
                     <Image
@@ -39,41 +42,45 @@ const CustomDrawerContent = ((props: DrawerContentComponentProps) => {
                 </View>
             </View>
 
-            <DrawerItem
-                icon={() => (
-                    <Ionicons
-                        size={25}
-                        name="home-outline"
-                    />
-                )}
-                label="Home"
-                style={[
-                    styles.drawerItem,
-                ]}
-                onPress={() => router.push("/(drawer)/(tabs)")}
-            />
+            <View style={{ flex: 1, width: 300 }}>
+                <DrawerItem
+                    icon={() => <Ionicons size={25} name="home-outline" />}
+                    label="Home"
+                    labelStyle={{ color: '#000' }}
+                    style={[
+                        styles.drawerItem,
+                    ]}
+                    onPress={() => {
+                        router.push("/(drawer)/(tabs)");
+                    }}
+                />
 
-            <DrawerItem
-                icon={() => (
-                    <SimpleLineIcons
-                        size={25}
-                        name="user"
-                    />
-                )}
-                label="Profile"
-                style={[
-                    styles.drawerItem,
-                ]}
-                onPress={() => router.push("/(drawer)/(tabs)/profile")}
-            />
+                <DrawerItem
+                    icon={() => <SimpleLineIcons size={25} name="user" />}
+                    label="Profile"
+                    labelStyle={{ color: '#000' }}
+                    style={[
+                        styles.drawerItem,
+                    ]}
+                    onPress={() => {
+                        router.push("/(drawer)/(tabs)/profile");
+                    }}
+                />
+            </View>
         </DrawerContentScrollView>
     );
-});
+};
 
 export default function Layout() {
     return (
         <Drawer
-            screenOptions={{ headerShown: false }}
+            screenOptions={{
+                headerShown: false,
+                drawerStyle: {
+                    width: 300,
+                    backgroundColor: '#fff',
+                },
+            }}
             drawerContent={(props) => <CustomDrawerContent {...props} />}
         />
     );
@@ -81,18 +88,18 @@ export default function Layout() {
 
 const styles = StyleSheet.create({
     userInfo: {
-        height: 165,
-        width: '100%',
-        borderRadius: 10,
+        height: 140,
+        width: 300,
+        borderBottomRightRadius: 10,
         position: 'relative',
     },
     bgWrapper: {
         ...StyleSheet.absoluteFillObject,
         overflow: 'hidden',
-        borderRadius: 10,
+        borderBottomRightRadius: 15,
     },
     bgImg: {
-        width: '100%',
+        width: 300,
         height: '100%',
     },
     headerContent: {
@@ -114,7 +121,7 @@ const styles = StyleSheet.create({
     },
     drawerItem: {
         borderRadius: 8,
-        padding: 7,
+        padding: 6,
         borderBottomWidth: 1,
         borderColor: '#c4c4c4',
     },
