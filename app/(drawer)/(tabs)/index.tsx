@@ -1,6 +1,6 @@
 import Button, { ButtonPropsItem } from "@/src/components/ui/button";
-import { StyleSheet, View, FlatList, Text } from "react-native";
-import { useState} from "react";
+import {StyleSheet, View, FlatList, Text, StatusBar} from "react-native";
+import {useMemo, useState} from "react";
 import PostCard from "@/src/components/ui/postCard";
 import { PostData } from "@/src/staticData/postData";
 
@@ -19,8 +19,15 @@ const IndexTab = () => {
     ];
 
 
+    const filteredPosts = useMemo(() => {
+        if (activeId === '1') return PostData;
+        const categoryTitle = buttonItem.find(btn => btn.id === activeId)?.title;
+        return PostData.filter(post => post.category === categoryTitle);
+    }, [activeId]);
+
     return (
         <View style={styles.safeArea}>
+            <StatusBar barStyle="light-content" />
             <View style={styles.header}>
                 <FlatList
                     data={buttonItem}
@@ -41,7 +48,7 @@ const IndexTab = () => {
             </View>
 
             <FlatList
-                data={PostData}
+                data={filteredPosts}
                 keyExtractor={(item) => item.id.toString()}
                 contentContainerStyle={styles.cardContainer}
                 renderItem={({ item }) => (
@@ -92,8 +99,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     cardContainer: {
-        paddingVertical: 12,
-        paddingBottom: 100,
+        paddingVertical: 10,
+        paddingBottom: 10,
         gap: 10,
         alignItems: 'center',
     },

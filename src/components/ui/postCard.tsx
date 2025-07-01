@@ -15,6 +15,7 @@ export interface postCardProps {
     views:string;
     discription:string;
     fullLocation:string;
+    category?:string;
 }
 const PostCard = ({
     name,
@@ -41,7 +42,7 @@ const PostCard = ({
                            style={styles.profilePic}
                     />
                     <View>
-                        <Text>{name}</Text>
+                        <Text style={{color:'#348fd9', fontWeight:'bold', fontSize:14}}>{name}</Text>
                         <Text>{location}</Text>
                     </View>
                 </View>
@@ -56,11 +57,14 @@ const PostCard = ({
                         }}
                 />
             </View>
-            <Image
-                source={{uri: imageUrl }}
-                style={{height:280, width:'100%'}}
-                contentFit="cover"
-            />
+            <View style={{flex:1}}>
+                <Image
+                    source={{uri: imageUrl}}
+                    style={{height:280, width: '100%'}}
+                    contentFit="cover"
+                />
+            </View>
+
             <View style={{flexDirection:'row', justifyContent:'space-between', paddingHorizontal:10, paddingVertical:5,}}>
                 <Text>{postDate}</Text>
                 <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
@@ -106,7 +110,7 @@ const styles = StyleSheet.create({
         paddingBottom:10,
     },
     header:{
-        height:70,
+        height:60,
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',
@@ -114,8 +118,9 @@ const styles = StyleSheet.create({
         width:'100%',
     },
     profilePic:{
-        height:50,
-        width:50,
+        height:40,
+        width:40,
+        borderRadius:25,
     },
 });
 
