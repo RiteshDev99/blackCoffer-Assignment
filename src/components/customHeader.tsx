@@ -1,18 +1,17 @@
-import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";
 import { EvilIcons, Ionicons } from "@expo/vector-icons";
-import {StatusBar} from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const CustomHeader = () => {
     const navigation = useNavigation();
 
     return (
         <SafeAreaView style={styles.safeArea}>
-            <StatusBar style="light" translucent backgroundColor="#0f3440" />
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                    <Ionicons size={30} name="menu-outline" color="#fff" />
+                    <Ionicons size={28} name="menu-outline" color="#fff" />
                 </TouchableOpacity>
 
                 <Text style={styles.title}>BWstory</Text>
@@ -28,6 +27,7 @@ const CustomHeader = () => {
 const styles = StyleSheet.create({
     safeArea: {
         backgroundColor: "#0f3440",
+        height: 65,
     },
     header: {
         height: 65,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
     },
     title: {
-        fontSize: 30,
+        fontSize: 28,
         color: "#fff",
         fontWeight: "600",
     },

@@ -15,7 +15,7 @@ export default function TabLayout() {
                 options={{
                     title: 'Discover',
                     tabBarIcon: ({ color }) => (
-                        <Fontisto size={25} name="compass" color={color} />
+                        <Fontisto size={20} name="compass" color={color} />
                     ),
                 }}
             />
@@ -24,7 +24,7 @@ export default function TabLayout() {
                 options={{
                     title: 'Profile',
                     tabBarIcon: ({ color }) => (
-                        <FontAwesome6 size={25} name="circle-user" color={color} />
+                        <FontAwesome6 size={20} name="circle-user" color={color} />
                     ),
                 }}
             />
