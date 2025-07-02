@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from "react-native";
 import {Image} from "expo-image";
 
 import Button from "@/src/components/ui/button";
-import {EvilIcons, FontAwesome} from "@expo/vector-icons";
+import {EvilIcons, FontAwesome, Octicons} from "@expo/vector-icons";
 import {useState} from "react";
 
 export interface postCardProps {
@@ -73,15 +73,15 @@ const PostCard = ({
                 </View>
             </View>
             <Text style={{paddingHorizontal:15}}>{discription}</Text>
-            <View style={{flexDirection:'row', paddingHorizontal:20, marginTop:10, gap:15,}}>
+            <View style={{flexDirection:'row', paddingHorizontal:20, marginTop:10, gap:15, }}>
                 {
                     activeHeart  ? (
-                        <FontAwesome  size={25} name="heart" color={'#154454'}
-                                      onPress={()=> setActiveHeart(prev => !prev)}
+                        <Octicons  size={25} name="heart-fill" color={'#154454'}
+                                   onPress={()=> setActiveHeart(prev => !prev)}
 
                         />
                     ):(
-                        <FontAwesome  size={23} name="heart-o" color={'#154454'}
+                        <Octicons  size={25} name="heart" color={'#154454'}
                                    onPress={()=> setActiveHeart(prev => !prev)}
 
                         />

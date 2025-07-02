@@ -23,7 +23,6 @@ const ProfileTab = () => {
                                 textColor={"#fff"}
                             />
                         </View>
-
                         <View style={styles.row}>
                             <FontAwesome size={18} name="location-arrow" color={"#080808"} />
                             <Text style={styles.text}>Berihwa, Uttar Pradesh</Text>
@@ -153,7 +152,7 @@ const styles = StyleSheet.create({
     },
     statsRow: {
         flexDirection: "row",
-        paddingVertical: 10,
+        paddingVertical: 8,
         borderRadius: 8,
     },
     statBox: {

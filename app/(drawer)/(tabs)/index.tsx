@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#e8e8e8',
     },
     header: {
-        height: 70,
+        height: 55,
         width: '100%',
         backgroundColor: '#e8e8e8',
         justifyContent: 'center',
@@ -98,9 +98,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     cardContainer: {
-        paddingVertical: 10,
+        paddingVertical: 5,
         paddingBottom: 10,
-        gap: 10,
+        gap: 8,
         alignItems: 'center',
     },
 });

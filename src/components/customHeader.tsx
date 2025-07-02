@@ -3,6 +3,7 @@ import { useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";
 import { EvilIcons, Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import {Image} from "expo-image";
 
 const CustomHeader = () => {
     const navigation = useNavigation();
@@ -14,7 +15,15 @@ const CustomHeader = () => {
                     <Ionicons size={28} name="menu-outline" color="#fff" />
                 </TouchableOpacity>
 
-                <Text style={styles.title}>BWstory</Text>
+                <Image
+                    source={require("@/assets/icons/BWstoryLogo.png")}
+                    style={{
+                        height: 40,
+                        width: 250,
+                        resizeMode: "contain",
+                        tintColor: "#fff",
+                    }}
+                />
 
                 <TouchableOpacity>
                     <EvilIcons size={30} name="search" color="#fff" />
@@ -29,7 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#103540",
     },
     header: {
-        height: 60,
+        height: 56,
         width: "100%",
         backgroundColor: "#154354",
         flexDirection: "row",
