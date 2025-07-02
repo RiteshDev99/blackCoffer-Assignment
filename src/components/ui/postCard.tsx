@@ -38,7 +38,7 @@ const PostCard = ({
         <View style={styles.mainContainer}>
             <View style={styles.header}>
                 <View style={{flexDirection:'row', alignItems:'center', gap:7,}}>
-                    <Image source={{uri:'https://wallpapers.com/images/hd/default-profile-picture-placeholder-kal8zbcust2luxh3.jpg'}}
+                    <Image source={require('@/assets/icons/user.png')}
                            style={styles.profilePic}
                     />
                     <View>

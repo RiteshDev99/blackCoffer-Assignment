@@ -10,7 +10,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
-    
+
     return (
         <DrawerContentScrollView
             {...props}
@@ -35,7 +35,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
 
                 <View style={styles.headerContent}>
                     <View style={styles.userProfile}>
-                        <SimpleLineIcons size={45} name="user" color="#154354" />
+                        <Image source={require('@/assets/icons/user.png')}
+                               style={styles.profilePic}
+                        />
                     </View>
                     <Text style={styles.headerText}>Ritesh Chaudhary</Text>
                     <Text style={styles.headerText}>Itwa Up</Text>
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
     userProfile: {
         height: 70,
         width: 70,
-        borderRadius: 50,
+        borderRadius: '100%',
         backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
@@ -124,5 +126,10 @@ const styles = StyleSheet.create({
         padding: 6,
         borderBottomWidth: 1,
         borderColor: '#c4c4c4',
+    },
+    profilePic:{
+        height:70,
+        width:70,
+        borderRadius:'100%',
     },
 });

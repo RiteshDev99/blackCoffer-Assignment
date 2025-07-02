@@ -79,7 +79,6 @@ const IndexTab = () => {
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        marginTop: 30,
         backgroundColor: '#e8e8e8',
     },
     header: {

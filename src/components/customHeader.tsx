@@ -8,7 +8,7 @@ const CustomHeader = () => {
     const navigation = useNavigation();
 
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <SafeAreaView style={styles.safeArea} edges={['top']}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
                     <Ionicons size={28} name="menu-outline" color="#fff" />
@@ -26,20 +26,19 @@ const CustomHeader = () => {
 
 const styles = StyleSheet.create({
     safeArea: {
-        backgroundColor: "#0f3440",
-        height: 65,
+        backgroundColor: "#103540",
     },
     header: {
-        height: 65,
+        height: 60,
         width: "100%",
-        backgroundColor: "#154454",
+        backgroundColor: "#154354",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
         paddingHorizontal: 16,
     },
     title: {
-        fontSize: 28,
+        fontSize: 24,
         color: "#fff",
         fontWeight: "600",
     },
